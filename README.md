@@ -25,7 +25,7 @@
 
 <sup>1</sup>Electronic Information School, Wuhan University, Wuhan 430072, China &emsp; <sup>2</sup>School of Robotics, Wuhan University, Wuhan 430072, China &emsp; <br><sup>3</sup>The First Surveying and Mapping Institute of Hunan Province &emsp; <br><sup>4</sup>The Hunan Engineering Research Center of 3D Real Scene Construction and Application Technology
 <br>
-<sup>*</sup> Equal Contribution &emsp; <sup>&dagger</sup> Project leader &emsp; <sup>&Letter;</sup> Corresponding Authors
+<sup>*</sup> Equal Contribution &emsp; <sup>&dagger;</sup> Project leader &emsp; <sup>&#9993</sup> Corresponding Authors
 
 </div>
 
