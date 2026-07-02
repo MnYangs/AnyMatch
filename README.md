@@ -16,9 +16,9 @@
 [Meng Yang](https://github.com/MnYangs)<sup>1*</sup> &nbsp;
 [Zizhuo Li](https://github.com/ZizhuoLi)<sup>1*</sup><sup>&dagger;</sup> &nbsp;
 [Linfeng Tang](https://github.com/Linfeng-Tang)<sup>2</sup> &nbsp;
-[Fan Fan](#)(https://orcid.org/0000-0002-7507-1810)<sup>2&#9993;</sup> &nbsp;
+[Fan Fan](https://orcid.org/0000-0002-7507-1810)<sup>2&#9993;</sup> &nbsp;
 <br>
-[Jiayi Ma](#)(https://github.com/jiayi-ma)<sup>2</sup> &nbsp;
+[Jiayi Ma](https://github.com/jiayi-ma)<sup>2</sup> &nbsp;
 <br> 
 
 <sup>1</sup>Electronic Information School, Wuhan University, Wuhan 430072, China &emsp; <sup>2</sup>School of Robotics, Wuhan University, Wuhan 430072, China &emsp;
