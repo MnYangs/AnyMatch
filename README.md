@@ -24,6 +24,7 @@
 <sup>1</sup>Electronic Information School, Wuhan University, Wuhan 430072, China &emsp; <sup>2</sup>School of Robotics, Wuhan University, Wuhan 430072, China &emsp;
 <br>
 <sup>*</sup> Equal Contribution &emsp; <sup>&dagger;</sup> Project leader &emsp; <sup>&#9993;</sup> Corresponding Authors
+<br>
 {2024102120059, zizhuo\_li, fanfan}@whu.edu.cn, {linfeng0419, jyma2010}@gmail.com<br>
 </div>
 
