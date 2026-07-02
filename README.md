@@ -14,7 +14,7 @@
 <a href="https://github.com/MnYangs/AnyMatch" target="_blank"><img src="https://visitor-badge.laobi.icu/badge?page_id=Cyril-gyd.ULF-Loc" alt="visitors"></a>
 
 [Meng Yang](https://github.com/MnYangs)<sup>1*</sup> &nbsp;
-[Zizhuo Li](https://laka-3dv.github.io/)<sup>1*&dagger</sup> &nbsp;
+[Zizhuo Li](https://laka-3dv.github.io/)<sup>1*</sup><sup>&dagger;</sup> &nbsp;
 [Linfeng Tang](https://ericzzj1989.github.io/)<sup>2</sup> &nbsp;
 [Fan Fan](#)<sup>3,4</sup> &nbsp;
 <br>
