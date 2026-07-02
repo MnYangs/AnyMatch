@@ -25,7 +25,7 @@
 <br>
 <sup>*</sup> Equal Contribution &emsp; <sup>&dagger;</sup> Project leader &emsp; <sup>&#9993;</sup> Corresponding Authors
 </div>
-{2024102120059, zizhuo\_li, fanfan}@whu.edu.cn, {linfeng0419, jyma2010}@gmail.com
+{2024102120059, zizhuo\_li, fanfan}@whu.edu.cn, {linfeng0419, jyma2010}@gmail.com<br>
 
 ## 🌀 Overview
 
