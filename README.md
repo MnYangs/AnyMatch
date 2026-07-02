@@ -16,14 +16,12 @@
 [Meng Yang](https://github.com/MnYangs)<sup>1*</sup> &nbsp;
 [Zizhuo Li](https://laka-3dv.github.io/)<sup>1*</sup><sup>&dagger;</sup> &nbsp;
 [Linfeng Tang](https://ericzzj1989.github.io/)<sup>2</sup> &nbsp;
-[Fan Fan](#)<sup>3,4</sup> &nbsp;
+[Fan Fan](#)<sup>2&#9993;</sup> &nbsp;
 <br>
-[Jiayi Ma](#)<sup>3,4</sup> &nbsp;
-[Pengcheng Shi](https://shipc-ai.github.io/)<sup>1</sup> &nbsp;
-[Jiayuan Li](https://jszy.whu.edu.cn/lijiayuan1/zh_CN/index.htm)<sup>1&dagger;</sup>
+[Jiayi Ma](#)<sup>2</sup> &nbsp;
 <br>
 
-<sup>1</sup>Electronic Information School, Wuhan University, Wuhan 430072, China &emsp; <sup>2</sup>School of Robotics, Wuhan University, Wuhan 430072, China &emsp; <br><sup>3</sup>The First Surveying and Mapping Institute of Hunan Province &emsp; <br><sup>4</sup>The Hunan Engineering Research Center of 3D Real Scene Construction and Application Technology
+<sup>1</sup>Electronic Information School, Wuhan University, Wuhan 430072, China &emsp; <sup>2</sup>School of Robotics, Wuhan University, Wuhan 430072, China &emsp;
 <br>
 <sup>*</sup> Equal Contribution &emsp; <sup>&dagger;</sup> Project leader &emsp; <sup>&#9993;</sup> Corresponding Authors
 
