@@ -42,7 +42,7 @@
 
 ## TODO List
 
-- [ ] Online Demo
+- [x] Online Demo
 - [ ] Any-Syn Full Dataset
 - [ ] Real Multimodal Evaluation Benchmark
 - [ ] Synthetic Multimodal Evaluation Benchmark
