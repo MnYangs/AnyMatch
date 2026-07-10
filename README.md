@@ -40,7 +40,15 @@
 - **[2026-06-30]** AnyMatch paper is available on [arXiv](https://arxiv.org/abs/2605.04730).🎉
 - **[2026-06-18]** Our paper is accepted by ECCV 2026! 🌟
 
+## TODO List
 
+- [ ] Online Demo
+- [ ] Any-Syn Full Dataset
+- [ ] Real Multimodal Evaluation Benchmark
+- [ ] Synthetic Multimodal Evaluation Benchmark
+- [ ] Training Code
+- [ ] Our AnyMatch Data Engine for Multimodal Data Generation
+- [ ] More Modalities Addition
 
 ## 📖 Citation
 
