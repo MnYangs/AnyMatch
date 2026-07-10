@@ -37,7 +37,7 @@
 </p>
 
 ## 📰 News
-- **[2026-06-30]** AnyMatchc paper is available on [arXiv](https://arxiv.org/abs/2605.04730).🎉
+- **[2026-06-30]** AnyMatch paper is available on [arXiv](https://arxiv.org/abs/2605.04730).🎉
 - **[2026-06-18]** Our paper is accepted by ECCV 2026! 🌟
 
 
