@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/arXiv-2605.04730-b31b1b.svg?logo=arXiv" alt="arXiv">
 </a>
 <a href="extension://bfdogplmndidlpjfhoijckpakkdjkkil/pdf/viewer.html?file=https%3A%2F%2Farxiv.org%2Fpdf%2F2606.31077" target="_blank">
-  <img src="https://img.shields.io/badge/Paper-ULFLoc-green.svg" alt="Paper ULF-Loc">
+  <img src="https://img.shields.io/badge/Paper-AnyMatch-green.svg" alt="Paper AnyMatch">
 </a>
 <a href="https://github.com/MnYangs/AnyMatch" target="_blank">
   <img src="https://img.shields.io/badge/Code-Github-blue.svg?logo=github" alt="Code">
@@ -31,7 +31,7 @@
 ## 🌀 Overview
 
 <p align="center">
-  <img src="images/1.png" alt="ULF-Loc Pipeline" width="90%">
+  <img src="images/1.png" alt="AnyMatch Pipeline" width="90%">
   <br>
   <em>AnyMatch synthesizes large-scale multi-modal pairs (RGB-IR/Depth/Normal/Event) from single-view images with 3D consistency via depth estimation, reprojection, inpainting, and cross-modal translation. Fine-tuning LoFTR/EDM/RoMa on Any-syn achieves SOTA cross-modal matching and zero-shot generalization.</em>
 </p>
