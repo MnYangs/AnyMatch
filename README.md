@@ -36,6 +36,106 @@
   <em>AnyMatch synthesizes large-scale multi-modal pairs (RGB-IR/Depth/Normal/Event) from single-view images with 3D consistency via depth estimation, reprojection, inpainting, and cross-modal translation. Fine-tuning LoFTR/EDM/RoMa on Any-syn achieves SOTA cross-modal matching and zero-shot generalization.</em>
 </p>
 
+## 🌀 Data Preparation for Evaluation
+
+We are grateful to the authors for their contribution of the testing datasets of the real multimodal scenarios.
+
+<p></p>
+
+<p></p> <details> <summary><b> RGB-Infrared Test Dataset </b></summary>  
+
+The METU-VisTIR dataset comes from [XoFTR](https://github.com/OnderT/XoFTR?tab=readme-ov-file), and is available
+at its official [Google Drive](https://drive.google.com/file/d/1Sj_vxj-GXvDQIMSg-ZUJR0vHBLIeDrLg/view).        
+For more information, please refer to the [XoFTR](https://github.com/OnderT/XoFTR?tab=readme-ov-file).
+
+</details>
+<p></p>
+
+<p></p> <details> <summary><b> MMIM Test Dataset </b></summary>  
+Please refer to [MMIM]([https://github.com/StaRainJ/Multi-modality-image-matching-database-metrics-methods](https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/MMIM/readme.md)) for details.
+
+   
+</details>
+<p></p>
+
+<p></p> <details> <summary><b> RGB-Depth Test Dataset </b></summary>  
+
+The Depth Dataset comes from the [DIODE](https://diode-dataset.org/) dataset.     
+You can directly download the dataset from its
+official [Amazon Web Service](http://diode-dataset.s3.amazonaws.com/val.tar.gz)
+or [Baidu Cloud Storage](https://pan.baidu.com/s/18IoX7f9W3F7acP0hjl7NSA).
+
+</details>
+<p></p>
+
+
+<p></p> <details> <summary><b> RGB-Event Test Dataset </b></summary>
+
+The aligned RGB-Event test dataset is generated from [DSEC](https://dsec.ifi.uzh.ch/).        
+Our test data can be downloaded
+from [Google Drive](https://drive.google.com/drive/folders/1rYKwI4Jmw1WAw_zRfHndph8AgyHZqdss?usp=sharing).
+
+</details>
+<p></p>
+
+### Data Structure
+
+<p></p> <details> <summary><b>Organizing the Dataset</b></summary>     
+
+We recommend organizing the datasets in the following folder structure:
+
+```
+data/
+├── METU-VisTIR/
+│ ├── index/
+│ └── ...
+├── Multi-modality-image-matching-database-metrics-methods/
+│ ├── Multimodal_Image_Matching_Datasets/
+│ └── ...
+├── megadepth/
+│ ├── train/[modality]/Undistorted_SfM/
+│ └── test/Undistorted_SfM/   # MegaDepth-1500
+└── DIODE/
+│ └── val/
+└── DSEC/
+  ├── vent_list.txt
+  ├── thun_01_a/
+  └── ...
+```
+
+## 🌀 Multimodal Image Matching Evaluation
+We provide the multi-modality image matching benchmark commands for our AnyMatch models.
+Choose the method from `loftr`, `EDM`, and `roma` for the multimodal evaluation.
+
+### Test on Real Multimodal Datasets
+
+```bash
+python test_relative_pose_infrared.py  # Infrared-RGB
+
+python test_relative_homo_depth.py     # Depth-RGB
+
+python test_relative_homo_event.py     # Event-RGB
+
+# --choose_model: 0 for medical test, 1 for remote sensing test
+python test_relative_homo_mmim.py    
+```
+
+### Test on Any-syn Dataset
+
+```bash
+python test_relative_pose_Any_syn.py 
+# --modality: Choose from [infrared, depth, event, normal]
+```
+
+Note: By default, the checkpoint is initialized from the MINIMA models in the `weights` folder, and you can specify a
+custom checkpoint using the `--ckpt` argument.
+
+### Run demo code
+
+```bash
+python ./demo/demo_anymatch.py 
+```
+
 ## 📰 News
 - **[2026-06-30]** AnyMatch paper is available on [arXiv](https://arxiv.org/abs/2605.04730).🎉
 - **[2026-06-18]** Our paper is accepted by ECCV 2026! 🌟
