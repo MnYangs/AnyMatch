@@ -68,7 +68,8 @@ data/
   ├── thun_01_a/
   └── ...
 ```
-
+</details>
+<p></p>
 
 ## 🌀 Multimodal Image Matching Evaluation
 We provide the multi-modality image matching benchmark commands for our AnyMatch models.
