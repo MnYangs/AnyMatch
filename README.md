@@ -41,12 +41,12 @@
 We are grateful to the authors for their contribution of the testing datasets of the real multimodal scenarios.
 
 <p></p> <details> <summary><b> METU_VisTIR Test Dataset </b></summary>  
-Please refer to [(METU_VisTIR)](https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/METU_VisTIR/README.md) for details.
+Please refer to (https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/METU_VisTIR/README.md) for details.
 </details>
 <p></p>
 
 <p></p> <details> <summary><b> MMIM Test Dataset </b></summary>  
-Please refer to [MMIM](https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/MMIM/readme.md) for details.
+Please refer to (https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/MMIM/readme.md) for details.
 </details>
 <p></p>
 
@@ -62,6 +62,7 @@ Please refer to (https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/
 
 <p></p> <details> <summary><b> RGB-Normal Test Dataset </b></summary>  
 Please refer to (https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/RGB-Normal/readme.md) for details.
+[点击这里访问百度](https://www.baidu.com)
 </details>
 <p></p>
 
@@ -73,21 +74,63 @@ We recommend organizing the datasets in the following folder structure:
 
 ```
 data/
-├── METU-VisTIR/
-│ ├── index/
-│ └── ...
-├── Multi-modality-image-matching-database-metrics-methods/
-│ ├── Multimodal_Image_Matching_Datasets/
-│ └── ...
-├── megadepth/
-│ ├── train/[modality]/Undistorted_SfM/
-│ └── test/Undistorted_SfM/   # MegaDepth-1500
-└── DIODE/
-│ └── val/
-└── DSEC/
-  ├── vent_list.txt
-  ├── thun_01_a/
-  └── ...
+├── test_data_preparation.sh          
+│
+├── Any-syn-test/                     
+│
+├── Single-View-Data/                 
+│   ├── 01_HouseIndoor.jpg
+│   ├── 02_Office.jpg
+│   ├── 03_Traffic.jpg
+│   ├── 05_Mountain.jpg
+│   ├── 06_MaitreyaBuddha.png
+│   ├── 07_Breads.jpg
+│   ├── 08_CatGirl.png
+│   ├── 09_Restaurant.jpg
+│   ├── readme-GLDv2.md
+│   └── readme-SA-1B.md
+│
+├── RealDataset/                     
+│   │
+│   ├── METU_VisTIR/                  # [RGB-红外] METU-VisTIR 数据集
+│   │   ├── index/                    #   场景划分、测试/验证列表
+│   │   ├── cloudy/                   #   阴天场景 (scene_1~scene_4)
+│   │   │   ├── scene_1/
+│   │   │   │   ├── thermal/images/   #     热红外图像
+│   │   │   │   └── visible/images/   #     可见光图像
+│   │   │   └── ...
+│   │   └── sunny/                    #   晴天场景 (scene_1~scene_4)
+│   │       └── ...
+│   │
+│   ├── MMIM/                         # [多模态通用] MMIM 多模态图像匹配数据集
+│   │   └── Multimodal_Image_Matching_Datasets/
+│   │       # 包含 18 种跨模态图像对（可见光-红外、CT-MRI、光学-SAR 等）
+│   │
+│   ├── RGB-Depth/                    # [RGB-深度] DIODE 深度数据集
+│   │   └── DIODE/
+│   │       ├── indoors/              #   室内场景 (scene_00001~scene_00007)
+│   │       │   ├── scene_00001/scan_00001/
+│   │       │   │   ├── *.png                # RGB 图像 (1024×768)
+│   │       │   │   ├── *_depth.npy          # 深度图
+│   │       │   │   ├── *_depth_mask.npy     # 深度有效掩码
+│   │       │   │   └── *_normal.npy         # 表面法线图
+│   │       │   └── ...
+│   │       └── outdoor/              #   室外场景 (scene_00011~scene_00023)
+│   │           └── ...
+│   │
+│   ├── RGB-EVENT/                    # [RGB-事件] DSEC 事件相机数据集
+│   │   └── DSEC/
+│   │       ├── vent_list.txt         #   测试序列列表
+│   │       ├── thun_01_a/            #   测试序列文件夹
+│   │       │   ├── events/left|right/        # 事件流数据 (events.h5)
+│   │       │   ├── images/left|right/        # RGB 图像
+│   │       │   └── ...
+│   │       └── ...                   #   其他测试序列
+│   │
+│   └── RGB-Normal/                   # [RGB-法线] DIODE 表面法线数据集
+│       └── val/                      #   验证集（与 RGB-Depth 同源）
+│           ├── indoors/
+│           └── outdoor/
 ```
 </details>
 <p></p>
