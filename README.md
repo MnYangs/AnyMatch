@@ -61,8 +61,7 @@ Please refer to (https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/
 <p></p>
 
 <p></p> <details> <summary><b> RGB-Normal Test Dataset </b></summary>  
-Please refer to (https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/RGB-Normal/readme.md) for details.
-[点击这里访问百度](https://www.baidu.com)
+Please refer to [a](#https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/RGB-Normal/readme.md) for details.
 </details>
 <p></p>
 
