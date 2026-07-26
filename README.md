@@ -52,7 +52,7 @@ For more information, please refer to the [XoFTR](https://github.com/OnderT/XoFT
 <p></p>
 
 <p></p> <details> <summary><b> MMIM Test Dataset </b></summary>  
-Please refer to [MMIM]([https://github.com/StaRainJ/Multi-modality-image-matching-database-metrics-methods](https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/MMIM/readme.md)) for details.
+Please refer to [MMIM](https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/MMIM/readme.md) for details.
 
    
 </details>
@@ -102,6 +102,7 @@ data/
   ├── thun_01_a/
   └── ...
 ```
+
 
 ## 🌀 Multimodal Image Matching Evaluation
 We provide the multi-modality image matching benchmark commands for our AnyMatch models.
