@@ -40,44 +40,10 @@
 
 We are grateful to the authors for their contribution of the testing datasets of the real multimodal scenarios.
 
-<p></p>
-
-<p></p> <details> <summary><b> RGB-Infrared Test Dataset </b></summary>  
-
-The METU-VisTIR dataset comes from [XoFTR](https://github.com/OnderT/XoFTR?tab=readme-ov-file), and is available
-at its official [Google Drive](https://drive.google.com/file/d/1Sj_vxj-GXvDQIMSg-ZUJR0vHBLIeDrLg/view).        
-For more information, please refer to the [XoFTR](https://github.com/OnderT/XoFTR?tab=readme-ov-file).
-
-</details>
-<p></p>
-
 <p></p> <details> <summary><b> MMIM Test Dataset </b></summary>  
 Please refer to [MMIM](https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/MMIM/readme.md) for details.
 
    
-</details>
-<p></p>
-
-<p></p> <details> <summary><b> RGB-Depth Test Dataset </b></summary>  
-
-The Depth Dataset comes from the [DIODE](https://diode-dataset.org/) dataset.     
-You can directly download the dataset from its
-official [Amazon Web Service](http://diode-dataset.s3.amazonaws.com/val.tar.gz)
-or [Baidu Cloud Storage](https://pan.baidu.com/s/18IoX7f9W3F7acP0hjl7NSA).
-
-</details>
-<p></p>
-
-
-<p></p> <details> <summary><b> RGB-Event Test Dataset </b></summary>
-
-The aligned RGB-Event test dataset is generated from [DSEC](https://dsec.ifi.uzh.ch/).        
-Our test data can be downloaded
-from [Google Drive](https://drive.google.com/drive/folders/1rYKwI4Jmw1WAw_zRfHndph8AgyHZqdss?usp=sharing).
-
-</details>
-<p></p>
-
 ### Data Structure
 
 <p></p> <details> <summary><b>Organizing the Dataset</b></summary>     
