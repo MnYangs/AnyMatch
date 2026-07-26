@@ -17,11 +17,14 @@ The original weight and fine-tuned weight files can be downloaded via the follow
 If you use these weights, please cite the following papers:
 
 ```bibtex
-@article{yang2025anymatch,
-  title={AnyMatch: Supercharging Universal Multi-Modal Image Matching with Large-Scale Single-View Images},
-  author={Yang, Meng and Li, Zizhuo and Tang, Linfeng and Fan, Fan and Ma, Jiayi},
-  journal={arXiv preprint},
-  year={2025}
+@misc{yang2026anymatchsupercharginguniversalmultimodal,
+      title={AnyMatch: Supercharging Universal Multi-Modal Image Matching with Large-Scale Single-View Images}, 
+      author={Meng Yang and Zizhuo Li and Linfeng Tang and Fan Fan and Jiayi Ma},
+      year={2026},
+      eprint={2606.31077},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2606.31077}, 
 }
 
 @inproceedings{li2025edm,
