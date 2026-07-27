@@ -94,39 +94,31 @@ data/
 │   ├── METU_VisTIR/                  
 │   │   ├── index/                    
 │   │   ├── cloudy/                   
-
 │   │   └── sunny/                 
 │   │       └── ...
 │   │
-│   ├── MMIM/                         # [多模态通用] MMIM 多模态图像匹配数据集
-│   │   └── Multimodal_Image_Matching_Datasets/
-│   │       # 包含 18 种跨模态图像对（可见光-红外、CT-MRI、光学-SAR 等）
+│   ├── MMIM/                        
+│   │   └── RemoteSensing/
+│   │   └── Medical/
+│   │   └── ComputerVision/
+│   │   └── test_list_2.txt
+│   │   └── test_list.txt
+│   │       
 │   │
-│   ├── RGB-Depth/                    # [RGB-深度] DIODE 深度数据集
-│   │   └── DIODE/
-│   │       ├── indoors/              #   室内场景 (scene_00001~scene_00007)
-│   │       │   ├── scene_00001/scan_00001/
-│   │       │   │   ├── *.png                # RGB 图像 (1024×768)
-│   │       │   │   ├── *_depth.npy          # 深度图
-│   │       │   │   ├── *_depth_mask.npy     # 深度有效掩码
-│   │       │   │   └── *_normal.npy         # 表面法线图
-│   │       │   └── ...
-│   │       └── outdoor/              #   室外场景 (scene_00011~scene_00023)
-│   │           └── ...
+│   ├── RGB-Depth/                   
+│   │   └── val/
+│   │   └── val_outdoor.csv
 │   │
-│   ├── RGB-EVENT/                    # [RGB-事件] DSEC 事件相机数据集
+│   ├── RGB-EVENT/                   
 │   │   └── DSEC/
-│   │       ├── vent_list.txt         #   测试序列列表
-│   │       ├── thun_01_a/            #   测试序列文件夹
-│   │       │   ├── events/left|right/        # 事件流数据 (events.h5)
-│   │       │   ├── images/left|right/        # RGB 图像
-│   │       │   └── ...
-│   │       └── ...                   #   其他测试序列
+│   │       ├── vent_list.txt       
+│   │       ├── thun_01_a/            
+│   │       └── interlaken_00_c/
+│   │       └── city_02_a/            
 │   │
-│   └── RGB-Normal/                   # [RGB-法线] DIODE 表面法线数据集
-│       └── val/                      #   验证集（与 RGB-Depth 同源）
-│           ├── indoors/
-│           └── outdoor/
+│   └── RGB-Normal/                
+│   │   └── val/
+│   │   └── val_outdoor.csv
 ```
 </details>
 <p></p>
