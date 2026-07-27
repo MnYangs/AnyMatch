@@ -51,7 +51,7 @@ Please refer to (https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/
 <p></p>
 
 <p></p> <details> <summary><b> RGB-Depth Test Dataset </b></summary>  
-Please refer to (https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/RGB-Depth/readme.md) for details.
+Please refer to [RGB-Depth](https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/RGB-Depth/readme.md) for details.
 </details>
 <p></p>
 
@@ -91,14 +91,11 @@ data/
 │
 ├── RealDataset/                     
 │   │
-│   ├── METU_VisTIR/                  # [RGB-红外] METU-VisTIR 数据集
-│   │   ├── index/                    #   场景划分、测试/验证列表
-│   │   ├── cloudy/                   #   阴天场景 (scene_1~scene_4)
-│   │   │   ├── scene_1/
-│   │   │   │   ├── thermal/images/   #     热红外图像
-│   │   │   │   └── visible/images/   #     可见光图像
-│   │   │   └── ...
-│   │   └── sunny/                    #   晴天场景 (scene_1~scene_4)
+│   ├── METU_VisTIR/                  
+│   │   ├── index/                    
+│   │   ├── cloudy/                   
+
+│   │   └── sunny/                 
 │   │       └── ...
 │   │
 │   ├── MMIM/                         # [多模态通用] MMIM 多模态图像匹配数据集
