@@ -516,7 +516,7 @@ def test_relative_pose_vismmim(data_root_dir, method="xoftr", exp_name="VisMMIM"
         os.makedirs(figures_dir)
 
     # Data paths
-    data_root = "./data/RealDataset/MMIM/"
+    data_root = data_root_dir
     if args.choose_model == 0:
         test_list = './data/RealDataset/MMIM/test_list.txt'      # medical
     else:
@@ -554,7 +554,7 @@ if __name__ == '__main__':
 
     parser.add_argument('--exp_name', type=str, default="VisMMIM")
     parser.add_argument('--data_root_dir', type=str,
-                        default="./data/Multi-modality-image-matching-database-metrics-methods/")
+                        default="./data/RealDataset/MMIM/")
     parser.add_argument('--save_dir', type=str, default="./results_relative_mmim_homo/")
     parser.add_argument('--e_name', type=str, default=None)
     parser.add_argument('--ransac_thres', type=float, default=1.5)
