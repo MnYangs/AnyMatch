@@ -41,7 +41,7 @@
 We are grateful to the authors for their contribution of the testing datasets of the real multimodal scenarios.
 
 <p></p> <details> <summary><b> METU_VisTIR Test Dataset </b></summary>  
-Please refer to <a href="[https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/RGB-Depth/readme.md](https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/METU_VisTIR/README.md)">METU_VisTIR</a> for details.
+Please refer to <a href="https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/METU_VisTIR/README.md">METU_VisTIR</a> for details.
 </details>
 <p></p>
 
