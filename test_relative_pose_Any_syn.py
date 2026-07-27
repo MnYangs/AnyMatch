@@ -505,7 +505,7 @@ if __name__ == '__main__':
     parser.add_argument('--exp_name', type=str, default="VisTIR")
     parser.add_argument('--data_root_dir', type=str,
                         default="./data/Any-syn-test/")
-    parser.add_argument('--save_dir', type=str, default="./results_relative_infrared_pose/")
+    parser.add_argument('--save_dir', type=str, default="./results_relative_Any_syn_pose/")
     parser.add_argument('--ransac_thres', type=float, default=6)
     parser.add_argument('--e_name', type=str, default=None)
     parser.add_argument('--print_out', action='store_true')
