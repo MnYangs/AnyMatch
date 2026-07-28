@@ -231,7 +231,7 @@ python ./demo/demo_anymatch.py
 ```
 
 ## 📰 News
-- **[2026-07-28]** AnyMatch Data Engine (View Transformation and Modality Transformation) has been released.🎉
+- **[2026-07-28]** AnyMatch Data Engine (View Transformation, Modality Transformation and SGCV module) has been released.🎉
 - **[2026-07-26]** AnyMatch test demo has been released.🎉
 - **[2026-06-30]** AnyMatch paper is available on [arXiv](https://arxiv.org/abs/2605.04730).🎉
 - **[2026-06-18]** Our paper is accepted by ECCV 2026! 🌟
