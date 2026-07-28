@@ -36,6 +36,43 @@
   <em>AnyMatch synthesizes large-scale multi-modal pairs (RGB-IR/Depth/Normal/Event) from single-view images with 3D consistency via depth estimation, reprojection, inpainting, and cross-modal translation. Fine-tuning LoFTR/EDM/RoMa on Any-syn achieves SOTA cross-modal matching and zero-shot generalization.</em>
 </p>
 
+## 🌀 View Transformation
+The View Transformation module lifts a single 2D image into 3D space via monocular depth estimation and reprojects it to novel views with inpainting, generating geometrically consistent multi-view image pairs without relying on SfM-MVS.
+
+Start View Transformation. Please run：
+
+```bash
+python ./View_Transformation/NovelViewTransformation.py
+```
+Refer to <a href="https://github.com/MnYangs/AnyMatch/tree/main/View_Transformation/README.md">View Transformation</a> for details.
+
+## 🌀 Modality_Transformation
+The Modality Transformation module converts the original single-view visible image into multiple target modalities (infrared, depth, normal, and event) using dedicated cross-modal translation models (e.g., RGB-to-IR diffusion, monocular depth/normal estimators, and motion-based event synthesis), thereby generating diverse multi-modal image pairs that simulate real-world sensor differences.
+
+Start Modality Transformation. Please run：
+
+RGB to IR:
+```bash
+python ./Modality_Transformation/RGB2IR/rgb2ir.py
+```
+
+RGB to depth:
+```bash
+python ./Modality_Transformation/RGB2depth/rgb2depth.py
+```
+
+RGB to normal:
+```bash
+python ./Modality_Transformation/RGB2normal/rgb2normal.py
+```
+
+RGB to other:
+```bash
+python ./Modality_Transformation/RGB2other/....py
+```
+
+Refer to <a href="https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/Modality_Transformation/README.md">Modality Transformation</a> for details.
+
 ## 🌀 Data Preparation for Evaluation
 
 We are grateful to the authors for their contribution of the testing datasets of the real multimodal scenarios.
@@ -162,7 +199,7 @@ python ./demo/demo_anymatch.py
 - **[2026-06-30]** AnyMatch paper is available on [arXiv](https://arxiv.org/abs/2605.04730).🎉
 - **[2026-06-18]** Our paper is accepted by ECCV 2026! 🌟
 
-## TODO List
+## 📃TODO List
 
 - [x] Test Demo
 - [ ] Any-Syn Full Dataset
