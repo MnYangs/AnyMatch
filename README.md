@@ -43,7 +43,7 @@
 </p>
 The View Transformation module lifts a single 2D image into 3D space via monocular depth estimation and reprojects it to novel views with inpainting, generating geometrically consistent multi-view image pairs without relying on SfM-MVS.
 
-Start View Transformation. Please run：
+**Start View Transformation**. Please run：
 
 ```bash
 python ./View_Transformation/NovelViewTransformation.py
@@ -53,35 +53,28 @@ Refer to <a href="https://github.com/MnYangs/AnyMatch/tree/main/View_Transformat
 ## 🌀 Modality Transformation
 The Modality Transformation module converts the original single-view visible image into multiple target modalities (infrared, depth, normal, and event) using dedicated cross-modal translation models (e.g., RGB-to-IR diffusion, monocular depth/normal estimators, and motion-based event synthesis), thereby generating diverse multi-modal image pairs that simulate real-world sensor differences.
 
-Start Modality Transformation. Please run：
-
+**Start Modality Transformation**. Please run：
 RGB to IR:
 ```bash
 python ./Modality_Transformation/RGB2IR/rgb2ir.py
 ```
-
 RGB to depth:
 ```bash
 python ./Modality_Transformation/RGB2depth/rgb2depth.py
 ```
-
 RGB to normal:
 ```bash
 python ./Modality_Transformation/RGB2normal/rgb2normal.py
 ```
-
 RGB to event:
 ```bash
 python ./Modality_Transformation/RGB2normal/rgb2event.py
 ```
-
 RGB to other:
 ```bash
 python ./Modality_Transformation/RGB2other/....py
 ```
-
 Refer to <a href="https://github.com/MnYangs/AnyMatch/tree/main/Modality_Transformation/readme.md">Modality Transformation</a> for details.
-
 
 ## ✨ With the View Transformation and Modality Transformation modules, you can create multi‑modal matching datasets tailored to your own domain! ✨
 
@@ -95,7 +88,6 @@ Please refer to <a href="https://github.com/MnYangs/AnyMatch/blob/main/data/%20S
 
 
 ## 🌀 Data Preparation for Evaluation
-
 We are grateful to the authors for their contribution of the testing datasets of the real multimodal scenarios.
 
 <p></p> <details> <summary><b> METU_VisTIR Test Dataset </b></summary>  
