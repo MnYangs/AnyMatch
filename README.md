@@ -157,14 +157,15 @@ python ./demo/demo_anymatch.py
 ```
 
 ## 📰 News
+- **[2026-07-26]** AnyMatch test demo has been released.🎉
 - **[2026-06-30]** AnyMatch paper is available on [arXiv](https://arxiv.org/abs/2605.04730).🎉
 - **[2026-06-18]** Our paper is accepted by ECCV 2026! 🌟
 
 ## TODO List
 
-- [x] Online Demo
+- [x] Test Demo
 - [ ] Any-Syn Full Dataset
-- [ ] Real Multimodal Evaluation Benchmark
+- [x] Real Multimodal Evaluation Benchmark
 - [ ] Synthetic Multimodal Evaluation Benchmark
 - [ ] Training Code
 - [ ] Our AnyMatch Data Engine for Multimodal Data Generation
