@@ -201,8 +201,8 @@ Choose the method from `loftr`, `EDM`, and `roma` for the multimodal evaluation.
   <img src="assets/4.png" alt="AnyMatch Pipeline" width="100%">
   <br>
 </p>
-### Test on Real Multimodal Datasets
 
+### Test on Real Multimodal Datasets
 ```bash
 python test_relative_pose_infrared.py  # Infrared-RGB
 
