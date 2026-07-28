@@ -44,7 +44,7 @@ Start View Transformation. Please run：
 ```bash
 python ./View_Transformation/NovelViewTransformation.py
 ```
-Refer to <a href="https://github.com/MnYangs/AnyMatch/tree/main/View_Transformation/README.md">View Transformation</a> for details.
+Refer to <a href="https://github.com/MnYangs/AnyMatch/tree/main/View_Transformation/readme.md">View Transformation</a> for details.
 
 ## 🌀 Modality_Transformation
 The Modality Transformation module converts the original single-view visible image into multiple target modalities (infrared, depth, normal, and event) using dedicated cross-modal translation models (e.g., RGB-to-IR diffusion, monocular depth/normal estimators, and motion-based event synthesis), thereby generating diverse multi-modal image pairs that simulate real-world sensor differences.
@@ -71,7 +71,7 @@ RGB to other:
 python ./Modality_Transformation/RGB2other/....py
 ```
 
-Refer to <a href="https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/Modality_Transformation/README.md">Modality Transformation</a> for details.
+Refer to <a href="https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/Modality_Transformation/readme.md">Modality Transformation</a> for details.
 
 ## 🌀 Data Preparation for Evaluation
 
