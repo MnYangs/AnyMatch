@@ -37,6 +37,10 @@
 </p>
 
 ## 🌀 View Transformation
+<p align="center">
+  <img src="assets/2.png" alt="AnyMatch Pipeline" width="90%">
+  <br>
+</p>
 The View Transformation module lifts a single 2D image into 3D space via monocular depth estimation and reprojects it to novel views with inpainting, generating geometrically consistent multi-view image pairs without relying on SfM-MVS.
 
 Start View Transformation. Please run：
