@@ -76,8 +76,26 @@ python ./Modality_Transformation/RGB2other/....py
 ```
 Refer to <a href="https://github.com/MnYangs/AnyMatch/tree/main/Modality_Transformation/readme.md">Modality Transformation</a> for details.
 
-## ✨ With the View Transformation and Modality Transformation modules, you can create multi‑modal matching datasets tailored to your own domain! ✨
+## 🌀 SGCV module
+<p align="center">
+  <img src="assets/3.png" alt="AnyMatch Pipeline" width="90%">
+  <br>
+</p>
+The **SGCV** module is a quality‑control step in the AnyMatch pipeline. After generating a novel‑view image pair, it uses a pretrained dense matching model (RoMa) to compute the **Percentage of Correct Keypoints (PCK)** at a threshold `τ` between the rendered correspondence and the ground‑truth geometric projection.
+```bash
+python ./SGVC/SGVC_pck.py
+```
+Refer to <a href="https://github.com/MnYangs/AnyMatch/blob/main/SGVC/readme.md">Modality Transformation</a> for details.
 
+## ✨ With the View Transformation and Modality Transformation modules, you can create multi‑modal matching datasets tailored to your own domain! ✨
+<p align="center">
+  <img src="assets/5.png" alt="AnyMatch Pipeline" width="90%">
+  <br>
+</p>
+<p align="center">
+  <img src="assets/6.png" alt="AnyMatch Pipeline" width="90%">
+  <br>
+</p>
 ## 🌀 Single-View Database Preparation
 The Single-View Database in AnyMatch is a large-scale collection of real-world RGB images sourced from public datasets (GLDv2 and SA-1B), all uniformly resized and center-cropped to 512×512 resolution. This database serves as the fundamental input repository, replacing expensive multi-view or multi-sensor acquisitions, and provides diverse, high-quality single-view images that are subsequently transformed by the View and Modality Transformation modules to generate geometrically consistent multi-modal training data with broad scene coverage.
 ### Single-View Database for Any-syn test subset 
@@ -89,6 +107,10 @@ Please refer to <a href="https://github.com/MnYangs/AnyMatch/blob/main/data/%20S
 
 ## 🌀 Data Preparation for Evaluation
 We are grateful to the authors for their contribution of the testing datasets of the real multimodal scenarios.
+<p align="center">
+  <img src="assets/4.png" alt="AnyMatch Pipeline" width="90%">
+  <br>
+</p>
 
 <p></p> <details> <summary><b> METU_VisTIR Test Dataset </b></summary>  
 Please refer to <a href="https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/METU_VisTIR/README.md">METU_VisTIR</a> for details.
