@@ -133,3 +133,16 @@ AnyMatch_results/                          # Root output directory (--output_pat
     ├── image1_files.npy                   #   - Numpy array of all image1 file paths  (absolute paths, sorted alphabetically)
     └── images_names_pcks.npz              #   - The PCK values of all image pairs  
 ```
+---
+
+*We thank the authors of L2M (https://github.com/Sharpiless/L2M) for sharing their code, which inspired our view transformation design.*
+Please cite:
+```bibtex
+@inproceedings{Liang2025L2M,
+  author    = {Yingping Liang and Yutao Hu and Wenqi Shao and Ying Fu},
+  title     = {Learning Dense Feature Matching via Lifting Single 2D Image to 3D Space},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year      = {2025},
+  pages     = {6621--6631}
+}
+```
