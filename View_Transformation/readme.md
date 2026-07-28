@@ -133,6 +133,3 @@ AnyMatch_results/                          # Root output directory (--output_pat
     ├── image1_files.npy                   #   - Numpy array of all image1 file paths  (absolute paths, sorted alphabetically)
     └── images_names_pcks.npz              #   - The PCK values of all image pairs  
 ```
----
-
-*Note: If you prefer LaTeX-style formulas, replace the plain‑text expressions with their LaTeX equivalents (e.g., `\[ D = 1 / (\alpha \cdot (1/D_r) + \beta + \epsilon) \]`) and ensure your Markdown renderer supports MathJax.*
