@@ -84,10 +84,10 @@ Refer to <a href="https://github.com/MnYangs/AnyMatch/tree/main/Modality_Transfo
 ## 🌀 Single-View Database Preparation
 The Single-View Database in AnyMatch is a large-scale collection of real-world RGB images sourced from public datasets (GLDv2 and SA-1B), all uniformly resized and center-cropped to 512×512 resolution. This database serves as the fundamental input repository, replacing expensive multi-view or multi-sensor acquisitions, and provides diverse, high-quality single-view images that are subsequently transformed by the View and Modality Transformation modules to generate geometrically consistent multi-modal training data with broad scene coverage.
 ### Single-View Database for Any-syn test subset 
-Please refer to <a href="https://github.com/MnYangs/AnyMatch/blob/main/data/%20Single-View-Data/readme-SA-1B.md">RGB-Normal</a> for details.
+Please refer to <a href="https://github.com/MnYangs/AnyMatch/blob/main/data/%20Single-View-Data/readme-SA-1B.md">SA-1B Dataset</a> for details.
 
 ### Single-View Database for Any-syn train subset 
-Please refer to <a href="https://github.com/MnYangs/AnyMatch/blob/main/data/%20Single-View-Data/readme-GLDv2.md">RGB-Normal</a> for details.
+Please refer to <a href="https://github.com/MnYangs/AnyMatch/blob/main/data/%20Single-View-Data/readme-GLDv2.md">GLDv2 Dataset</a> for details.
 
 
 ## 🌀 Data Preparation for Evaluation
