@@ -87,7 +87,7 @@ The **SGCV** module is a quality‑control step in the AnyMatch pipeline. After 
 ```bash
 python ./SGVC/SGVC_pck.py
 ```
-Refer to <a href="https://github.com/MnYangs/AnyMatch/blob/main/SGVC/readme.md">Modality Transformation</a> for details.
+Refer to <a href="https://github.com/MnYangs/AnyMatch/blob/main/SGVC/readme.md">SGCV</a> for details.
 
 ## ✨ With the View Transformation and Modality Transformation modules, you can create multi‑modal matching datasets tailored to your own domain! ✨
 <p align="center">
@@ -110,10 +110,6 @@ Please refer to <a href="https://github.com/MnYangs/AnyMatch/blob/main/data/%20S
 
 ## 🌀 Data Preparation for Evaluation
 We are grateful to the authors for their contribution of the testing datasets of the real multimodal scenarios.
-<p align="center">
-  <img src="assets/4.png" alt="AnyMatch Pipeline" width="90%">
-  <br>
-</p>
 
 <p></p> <details> <summary><b> METU_VisTIR Test Dataset </b></summary>  
 Please refer to <a href="https://github.com/MnYangs/AnyMatch/blob/main/data/RealDataset/METU_VisTIR/README.md">METU_VisTIR</a> for details.
@@ -201,7 +197,10 @@ data/
 ## 🌀 Multimodal Image Matching Evaluation
 We provide the multi-modality image matching benchmark commands for our AnyMatch models.
 Choose the method from `loftr`, `EDM`, and `roma` for the multimodal evaluation.
-
+<p align="center">
+  <img src="assets/4.png" alt="AnyMatch Pipeline" width="100%">
+  <br>
+</p>
 ### Test on Real Multimodal Datasets
 
 ```bash
