@@ -135,6 +135,7 @@ AnyMatch_results/                          # Root output directory (--output_pat
 ```
 ---
 
+## Acknowledgments
 *We thank the authors of L2M (https://github.com/Sharpiless/L2M) for sharing their code, which inspired our view transformation design.*
 Please cite:
 ```bibtex
