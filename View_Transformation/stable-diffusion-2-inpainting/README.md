@@ -1,193 +1,159 @@
----
-license: openrail++
-tags:
-- stable-diffusion
-inference: false
----
+# Stable Diffusion 2 Inpainting
 
+## Overview
 
-https://huggingface.co/sd2-community/stable-diffusion-2-inpainting/tree/main
+**Stable Diffusion 2 Inpainting** is a diffusion-based text-to-image inpainting model developed by **Robin Rombach, Patrick Esser** and the team at **Stability AI**. It is part of the **Stable Diffusion 2** family, which builds upon the original [Latent Diffusion Model](https://arxiv.org/abs/2112.10752) (CVPR 2022) and uses a new **OpenCLIP-ViT/H** text encoder for improved image quality. The inpainting variant is specifically designed to fill in masked regions of an image guided by a text prompt.
 
-# Stable Diffusion v2 Model Card
-This model card focuses on the model associated with the Stable Diffusion v2, available [here](https://github.com/Stability-AI/stablediffusion).
+- **Model Type**: Diffusion-based text-to-image inpainting generation model
+- **Developers**: Robin Rombach, Patrick Esser (Stability AI)
+- **Source Repository**: [Stability AI / stablediffusion](https://github.com/Stability-AI/stablediffusion)
+- **Diffusers Documentation**: [Stable Diffusion 2](https://huggingface.co/docs/diffusers/api/pipelines/stable_diffusion/stable_diffusion_2)
+- **Download**: [https://huggingface.co/sd2-community/stable-diffusion-2-inpainting](https://huggingface.co/sd2-community/stable-diffusion-2-inpainting)
+- **License**: [CreativeML Open RAIL++-M License](https://huggingface.co/sd2-community/stable-diffusion-2/blob/main/LICENSE-MODEL)
 
-This `stable-diffusion-2-inpainting` model is resumed from [stable-diffusion-2-base](https://huggingface.co/stabilityai/stable-diffusion-2-base) (`512-base-ema.ckpt`) and trained for another 200k steps. Follows the mask-generation strategy presented in [LAMA](https://github.com/saic-mdal/lama) which, in combination with the latent VAE representations of the masked image, are used as an additional conditioning.
+## Model Description
 
-![image](https://huggingface.co/stabilityai/stable-diffusion-2-inpainting/resolve/main/merged-leopards.png)
+Stable Diffusion 2 Inpainting is a **Latent Diffusion Model (LDM)** that operates in the compressed latent space of a pretrained autoencoder. It uses a fixed, pretrained **OpenCLIP-ViT/H** text encoder for conditioning on natural language prompts. The inpainting model is **resumed from `stable-diffusion-2-base`** (`512-base-ema.ckpt`) and fine-tuned for an additional **200k steps** on the LAION-5B dataset.
 
-- Use it with the [`stablediffusion`](https://github.com/Stability-AI/stablediffusion) repository: download the `512-inpainting-ema.ckpt` [here](https://huggingface.co/stabilityai/stable-diffusion-2-inpainting/resolve/main/512-inpainting-ema.ckpt).
-- Use it with 🧨 [`diffusers`](https://huggingface.co/stabilityai/stable-diffusion-2-inpainting#examples)
+The model follows the mask-generation strategy presented in [LAMA](https://github.com/saic-mdal/lama), where the masked image's latent VAE representations are combined with the mask as additional conditioning. The extra input channels of the U-Net that process this information were **zero-initialized** before fine-tuning.
 
-## Model Details
-- **Developed by:** Robin Rombach, Patrick Esser
-- **Model type:** Diffusion-based text-to-image generation model
-- **Language(s):** English
-- **License:** [CreativeML Open RAIL++-M License](https://huggingface.co/stabilityai/stable-diffusion-2/blob/main/LICENSE-MODEL)
-- **Model Description:** This is a model that can be used to generate and modify images based on text prompts. It is a [Latent Diffusion Model](https://arxiv.org/abs/2112.10752) that uses a fixed, pretrained text encoder ([OpenCLIP-ViT/H](https://github.com/mlfoundations/open_clip)).
-- **Resources for more information:** [GitHub Repository](https://github.com/Stability-AI/).
-- **Cite as:**
+### Key Architecture Details
 
-      @InProceedings{Rombach_2022_CVPR,
-          author    = {Rombach, Robin and Blattmann, Andreas and Lorenz, Dominik and Esser, Patrick and Ommer, Bj\"orn},
-          title     = {High-Resolution Image Synthesis With Latent Diffusion Models},
-          booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-          month     = {June},
-          year      = {2022},
-          pages     = {10684-10695}
-      }
+| Component | Specification |
+|---|---|
+| Backbone | Latent Diffusion Model (LDM) |
+| Text Encoder | OpenCLIP-ViT/H (frozen) |
+| Autoencoder Downsampling | 8× (H×W×3 → H/8×W/8×4) |
+| Base Checkpoint | `512-base-ema.ckpt` |
+| Inpainting Fine-tuning | 200k additional steps |
+| Mask Strategy | LAMA-style mask generation |
+| Training Resolution | 512×512 |
+| Training Data | LAION-5B (aesthetic-filtered, NSFW-filtered) |
+| Hardware | 32 × 8 × A100 GPUs |
+| Optimizer | AdamW |
+| Batch Size | 2048 |
+| Learning Rate | 1e-4 (warmup 10k steps) |
 
-## Examples
+## Download
 
-Using the [🤗's Diffusers library](https://github.com/huggingface/diffusers) to run Stable Diffusion 2 inpainting in a simple and efficient manner.
+The model checkpoint is available for download from Hugging Face:
+
+- **Model Hub**: [https://huggingface.co/sd2-community/stable-diffusion-2-inpainting](https://huggingface.co/sd2-community/stable-diffusion-2-inpainting)
+- **Original checkpoint**: [`512-inpainting-ema.ckpt`](https://huggingface.co/sd2-community/stable-diffusion-2-inpainting/resolve/main/512-inpainting-ema.ckpt)
+
+### Installation
 
 ```bash
 pip install diffusers transformers accelerate scipy safetensors
 ```
 
+Optionally, install `xformers` for memory-efficient attention:
+
+```bash
+pip install xformers
+```
+
+## Usage
+
+### Using the Diffusers Library
+
 ```python
+import torch
 from diffusers import StableDiffusionInpaintPipeline
+
 pipe = StableDiffusionInpaintPipeline.from_pretrained(
     "stabilityai/stable-diffusion-2-inpainting",
     torch_dtype=torch.float16,
 )
 pipe.to("cuda")
+
 prompt = "Face of a yellow cat, high resolution, sitting on a park bench"
-#image and mask_image should be PIL images.
-#The mask structure is white for inpainting and black for keeping as is
+# image and mask_image should be PIL images
+# The mask structure: white for inpainting, black for keeping as is
 image = pipe(prompt=prompt, image=image, mask_image=mask_image).images[0]
 image.save("./yellow_cat_on_park_bench.png")
 ```
 
-**Notes**:
-- Despite not being a dependency, we highly recommend you to install [xformers](https://github.com/facebookresearch/xformers) for memory efficient attention (better performance)
-- If you have low GPU RAM available, make sure to add a `pipe.enable_attention_slicing()` after sending it to `cuda` for less VRAM usage (to the cost of speed)
+### Using the DPMSolverMultistepScheduler (recommended)
 
-**How it works:**
-`image`          | `mask_image`
-:-------------------------:|:-------------------------:|
-<img src="https://raw.githubusercontent.com/CompVis/latent-diffusion/main/data/inpainting_examples/overture-creations-5sI6fQgYIuo.png" alt="drawing" width="300"/> | <img src="https://raw.githubusercontent.com/CompVis/latent-diffusion/main/data/inpainting_examples/overture-creations-5sI6fQgYIuo_mask.png" alt="drawing" width="300"/>
+```python
+import torch
+from diffusers import DiffusionPipeline, DPMSolverMultistepScheduler
+from diffusers.utils import load_image, make_image_grid
 
+init_image = load_image("path/to/image.png").resize((512, 512))
+mask_image = load_image("path/to/mask.png").resize((512, 512))
 
-`prompt`          | `Output`
-:-------------------------:|:-------------------------:|
-<span style="position: relative;bottom: 150px;">Face of a yellow cat, high resolution, sitting on a park bench</span> | <img src="https://huggingface.co/datasets/patrickvonplaten/images/resolve/main/test.png" alt="drawing" width="300"/>
+repo_id = "stabilityai/stable-diffusion-2-inpainting"
+pipe = DiffusionPipeline.from_pretrained(repo_id, torch_dtype=torch.float16, variant="fp16")
+pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)
+pipe = pipe.to("cuda")
 
-# Uses
+prompt = "Face of a yellow cat, high resolution, sitting on a park bench"
+image = pipe(prompt=prompt, image=init_image, mask_image=mask_image, num_inference_steps=25).images[0]
+```
 
-## Direct Use 
-The model is intended for research purposes only. Possible research areas and tasks include
+### Memory Optimization
 
-- Safe deployment of models which have the potential to generate harmful content.
-- Probing and understanding the limitations and biases of generative models.
-- Generation of artworks and use in design and other artistic processes.
-- Applications in educational or creative tools.
-- Research on generative models.
+If you have limited GPU VRAM, use attention slicing:
 
-Excluded uses are described below.
+```python
+pipe.enable_attention_slicing()
+```
 
- ### Misuse, Malicious Use, and Out-of-Scope Use
-_Note: This section is originally taken from the [DALLE-MINI model card](https://huggingface.co/dalle-mini/dalle-mini), was used for Stable Diffusion v1, but applies in the same way to Stable Diffusion v2_.
+## How It Works
 
-The model should not be used to intentionally create or disseminate images that create hostile or alienating environments for people. This includes generating images that people would foreseeably find disturbing, distressing, or offensive; or content that propagates historical or current stereotypes.
+The inpainting process takes three inputs:
 
-#### Out-of-Scope Use
-The model was not trained to be factual or true representations of people or events, and therefore using the model to generate such content is out-of-scope for the abilities of this model.
+1. **Image**: The original image to be edited (PIL image).
+2. **Mask**: A binary mask where **white pixels** indicate regions to be inpainted (replaced) and **black pixels** indicate regions to keep unchanged.
+3. **Prompt**: A text description of the desired content for the masked region.
 
-#### Misuse and Malicious Use
-Using the model to generate content that is cruel to individuals is a misuse of this model. This includes, but is not limited to:
+The masked image is encoded into the latent space via the VAE encoder, combined with the mask as additional conditioning channels, and processed by the U-Net backbone guided by the text prompt via cross-attention. The model only modifies the masked regions while preserving the unmasked areas.
 
-- Generating demeaning, dehumanizing, or otherwise harmful representations of people or their environments, cultures, religions, etc.
-- Intentionally promoting or propagating discriminatory content or harmful stereotypes.
-- Impersonating individuals without their consent.
-- Sexual content without consent of the people who might see it.
-- Mis- and disinformation
-- Representations of egregious violence and gore
-- Sharing of copyrighted or licensed material in violation of its terms of use.
-- Sharing content that is an alteration of copyrighted or licensed material in violation of its terms of use.
+| Input | Mask | Output |
+|---|---|---|
+| Original image | White = inpaint, Black = keep | Inpainted result |
 
-## Limitations and Bias
+## Key Features
 
-### Limitations
+- **Text-guided inpainting**: Fill masked regions with content described by natural language prompts.
+- **OpenCLIP-ViT/H text encoder**: Improved text understanding compared to Stable Diffusion v1.
+- **512×512 resolution**: Generates high-quality inpainted images at 512×512.
+- **LAMA-style mask strategy**: Robust mask conditioning for realistic inpainting results.
+- **Memory efficient**: Supports `xformers` and attention slicing for low-VRAM environments.
+- **Diffusers integration**: Simple API via the Hugging Face Diffusers library.
 
-- The model does not achieve perfect photorealism
-- The model cannot render legible text
-- The model does not perform well on more difficult tasks which involve compositionality, such as rendering an image corresponding to “A red cube on top of a blue sphere”
-- Faces and people in general may not be generated properly.
-- The model was trained mainly with English captions and will not work as well in other languages.
-- The autoencoding part of the model is lossy
-- The model was trained on a subset of the large-scale dataset
-  [LAION-5B](https://laion.ai/blog/laion-5b/), which contains adult, violent and sexual content. To partially mitigate this, we have filtered the dataset using LAION's NFSW detector (see Training section).
+## Limitations
 
-### Bias
-While the capabilities of image generation models are impressive, they can also reinforce or exacerbate social biases. 
-Stable Diffusion vw was primarily trained on subsets of [LAION-2B(en)](https://laion.ai/blog/laion-5b/), 
-which consists of images that are limited to English descriptions. 
-Texts and images from communities and cultures that use other languages are likely to be insufficiently accounted for. 
-This affects the overall output of the model, as white and western cultures are often set as the default. Further, the 
-ability of the model to generate content with non-English prompts is significantly worse than with English-language prompts.
-Stable Diffusion v2 mirrors and exacerbates biases to such a degree that viewer discretion must be advised irrespective of the input or its intent.
-
-
-## Training
-
-**Training Data**
-The model developers used the following dataset for training the model:
-
-- LAION-5B and subsets (details below). The training data is further filtered using LAION's NSFW detector, with a "p_unsafe" score of 0.1 (conservative). For more details, please refer to LAION-5B's [NeurIPS 2022](https://openreview.net/forum?id=M3Y74vmsMcY) paper and reviewer discussions on the topic.
-
-**Training Procedure**
-Stable Diffusion v2 is a latent diffusion model which combines an autoencoder with a diffusion model that is trained in the latent space of the autoencoder. During training, 
-
-- Images are encoded through an encoder, which turns images into latent representations. The autoencoder uses a relative downsampling factor of 8 and maps images of shape H x W x 3 to latents of shape H/f x W/f x 4
-- Text prompts are encoded through the OpenCLIP-ViT/H text-encoder.
-- The output of the text encoder is fed into the UNet backbone of the latent diffusion model via cross-attention.
-- The loss is a reconstruction objective between the noise that was added to the latent and the prediction made by the UNet. We also use the so-called _v-objective_, see https://arxiv.org/abs/2202.00512.
-
-We currently provide the following checkpoints:
-
-- `512-base-ema.ckpt`: 550k steps at resolution `256x256` on a subset of [LAION-5B](https://laion.ai/blog/laion-5b/) filtered for explicit pornographic material, using the [LAION-NSFW classifier](https://github.com/LAION-AI/CLIP-based-NSFW-Detector) with `punsafe=0.1` and an [aesthetic score](https://github.com/christophschuhmann/improved-aesthetic-predictor) >= `4.5`.
-  850k steps at resolution `512x512` on the same dataset with resolution `>= 512x512`.
-- `768-v-ema.ckpt`: Resumed from `512-base-ema.ckpt` and trained for 150k steps using a [v-objective](https://arxiv.org/abs/2202.00512) on the same dataset. Resumed for another 140k steps on a `768x768` subset of our dataset.
-- `512-depth-ema.ckpt`: Resumed from `512-base-ema.ckpt` and finetuned for 200k steps. Added an extra input channel to process the (relative) depth prediction produced by [MiDaS](https://github.com/isl-org/MiDaS) (`dpt_hybrid`) which is used as an additional conditioning.
-The additional input channels of the U-Net which process this extra information were zero-initialized.
-- `512-inpainting-ema.ckpt`: Resumed from `512-base-ema.ckpt` and trained for another 200k steps. Follows the mask-generation strategy presented in [LAMA](https://github.com/saic-mdal/lama) which, in combination with the latent VAE representations of the masked image, are used as an additional conditioning.
-The additional input channels of the U-Net which process this extra information were zero-initialized. The same strategy was used to train the [1.5-inpainting checkpoint](https://github.com/saic-mdal/lama).
-- `x4-upscaling-ema.ckpt`: Trained for 1.25M steps on a 10M subset of LAION containing images `>2048x2048`. The model was trained on crops of size `512x512` and is a text-guided [latent upscaling diffusion model](https://arxiv.org/abs/2112.10752).
-In addition to the textual input, it receives a `noise_level` as an input parameter, which can be used to add noise to the low-resolution input according to a [predefined diffusion schedule](configs/stable-diffusion/x4-upscaling.yaml). 
-
-- **Hardware:** 32 x 8 x A100 GPUs
-- **Optimizer:** AdamW
-- **Gradient Accumulations**: 1
-- **Batch:** 32 x 8 x 2 x 4 = 2048
-- **Learning rate:** warmup to 0.0001 for 10,000 steps and then kept constant
-
-## Evaluation Results 
-Evaluations with different classifier-free guidance scales (1.5, 2.0, 3.0, 4.0,
-5.0, 6.0, 7.0, 8.0) and 50 steps DDIM sampling steps show the relative improvements of the checkpoints:
-
-![pareto](model-variants.jpg) 
-
-Evaluated using 50 DDIM steps and 10000 random prompts from the COCO2017 validation set, evaluated at 512x512 resolution.  Not optimized for FID scores.
-
-## Environmental Impact
-
-**Stable Diffusion v1** **Estimated Emissions**
-Based on that information, we estimate the following CO2 emissions using the [Machine Learning Impact calculator](https://mlco2.github.io/impact#compute) presented in [Lacoste et al. (2019)](https://arxiv.org/abs/1910.09700). The hardware, runtime, cloud provider, and compute region were utilized to estimate the carbon impact.
-
-- **Hardware Type:** A100 PCIe 40GB
-- **Hours used:** 200000
-- **Cloud Provider:** AWS
-- **Compute Region:** US-east
-- **Carbon Emitted (Power consumption x Time x Carbon produced based on location of power grid):** 15000 kg CO2 eq.
+- Does not achieve perfect photorealism in all cases.
+- Cannot render legible text reliably.
+- Struggles with compositional tasks (e.g., "a red cube on top of a blue sphere").
+- Faces and people may not be generated properly.
+- Primarily trained on English captions; performance degrades with other languages.
+- The autoencoder is lossy, which may introduce artifacts.
+- Training data (LAION-5B) may contain biases; NSFW content was filtered using LAION's NSFW detector.
 
 ## Citation
-    @InProceedings{Rombach_2022_CVPR,
-        author    = {Rombach, Robin and Blattmann, Andreas and Lorenz, Dominik and Esser, Patrick and Ommer, Bj\"orn},
-        title     = {High-Resolution Image Synthesis With Latent Diffusion Models},
-        booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-        month     = {June},
-        year      = {2022},
-        pages     = {10684-10695}
-    }
 
-*This model card was written by: Robin Rombach, Patrick Esser and David Ha and is based on the [Stable Diffusion v1](https://github.com/CompVis/stable-diffusion/blob/main/Stable_Diffusion_v1_Model_Card.md) and [DALL-E Mini model card](https://huggingface.co/dalle-mini/dalle-mini).*
+If you use Stable Diffusion 2 Inpainting in your research, please cite the original Latent Diffusion Model paper:
+
+```bibtex
+@InProceedings{Rombach_2022_CVPR,
+  author    = {Rombach, Robin and Blattmann, Andreas and Lorenz, Dominik and Esser, Patrick and Ommer, Bj\"orn},
+  title     = {High-Resolution Image Synthesis With Latent Diffusion Models},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month     = {June},
+  year      = {2022},
+  pages     = {10684-10695}
+}
+```
+
+## References
+
+- Model Download: [https://huggingface.co/sd2-community/stable-diffusion-2-inpainting](https://huggingface.co/sd2-community/stable-diffusion-2-inpainting)
+- Diffusers Documentation: [https://huggingface.co/docs/diffusers/api/pipelines/stable_diffusion/stable_diffusion_2](https://huggingface.co/docs/diffusers/api/pipelines/stable_diffusion/stable_diffusion_2)
+- Stable Diffusion 2 Announcement: [https://stability.ai/blog/stable-diffusion-v2-release](https://stability.ai/blog/stable-diffusion-v2-release)
+- LDM Paper: [https://arxiv.org/abs/2112.10752](https://arxiv.org/abs/2112.10752)
+- GitHub Repository: [https://github.com/Stability-AI/stablediffusion](https://github.com/Stability-AI/stablediffusion)
+- LAMA (Mask Strategy): [https://github.com/saic-mdal/lama](https://github.com/saic-mdal/lama)
