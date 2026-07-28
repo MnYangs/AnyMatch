@@ -57,5 +57,13 @@ The Modality Transformation module converts the original single‑view visible (
 Together with the View Transformation outputs, the Modality Transformation results form a complete multi‑view, multi‑modal training sample with strict 3D geometric supervision.
 
 ---
-
-> **Note**: The official AnyMatch source code repository has not been publicly released at the time of this writing. The algorithms listed above are the specific implementations referenced in the paper for each modality translation task.
+*We thank the authors of MINIMA (https://github.com/LSXI7/MINIMA) for sharing their code, which inspired our view transformation design.*
+Please cite:
+```bibtex
+@inproceedings{ren2025minima,
+  title={MINIMA: Modality Invariant Image Matching},
+  author={Ren, Jiangwei and Jiang, Xingyu and Li, Zizhuo and Liang, Dingkang and Zhou, Xin and Bai, Xiang},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2025}
+}
+```
