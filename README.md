@@ -41,6 +41,7 @@
   <img src="assets/2.png" alt="AnyMatch Pipeline" width="90%">
   <br>
 </p>
+
 The View Transformation module lifts a single 2D image into 3D space via monocular depth estimation and reprojects it to novel views with inpainting, generating geometrically consistent multi-view image pairs without relying on SfM-MVS.
 
 **Start View Transformation**. Please run：
@@ -81,6 +82,7 @@ Refer to <a href="https://github.com/MnYangs/AnyMatch/tree/main/Modality_Transfo
   <img src="assets/3.png" alt="AnyMatch Pipeline" width="90%">
   <br>
 </p>
+
 The **SGCV** module is a quality‑control step in the AnyMatch pipeline. After generating a novel‑view image pair, it uses a pretrained dense matching model (RoMa) to compute the **Percentage of Correct Keypoints (PCK)** at a threshold `τ` between the rendered correspondence and the ground‑truth geometric projection.
 ```bash
 python ./SGVC/SGVC_pck.py
@@ -96,6 +98,7 @@ Refer to <a href="https://github.com/MnYangs/AnyMatch/blob/main/SGVC/readme.md">
   <img src="assets/6.png" alt="AnyMatch Pipeline" width="90%">
   <br>
 </p>
+
 ## 🌀 Single-View Database Preparation
 The Single-View Database in AnyMatch is a large-scale collection of real-world RGB images sourced from public datasets (GLDv2 and SA-1B), all uniformly resized and center-cropped to 512×512 resolution. This database serves as the fundamental input repository, replacing expensive multi-view or multi-sensor acquisitions, and provides diverse, high-quality single-view images that are subsequently transformed by the View and Modality Transformation modules to generate geometrically consistent multi-modal training data with broad scene coverage.
 ### Single-View Database for Any-syn test subset 
