@@ -49,6 +49,10 @@ The Modality Transformation module converts the original single‑view visible (
 
 ---
 
+## Inputs
+
+The input images are from `./View_Transformation/AnyMatch_results/image1`.
+
 ## Outputs
 
 - Synthesized multi‑modal images: **Infrared**, **Depth**, **Normal**, and **Event** representations of the original scene.
@@ -57,6 +61,7 @@ The Modality Transformation module converts the original single‑view visible (
 Together with the View Transformation outputs, the Modality Transformation results form a complete multi‑view, multi‑modal training sample with strict 3D geometric supervision.
 
 ---
+
 ## Acknowledgments
 *We thank the authors of MINIMA (https://github.com/LSXI7/MINIMA) for sharing their code, which inspired our view transformation design.*
 Please cite:

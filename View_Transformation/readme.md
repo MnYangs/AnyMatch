@@ -47,6 +47,11 @@ The View Transformation module lifts a single 2D image into 3D space and renders
 6. **Geometric Verification (Optional)**  
    The generated image pair is validated using a dense matching model (e.g., RoMa) to ensure geometric consistency. Pairs with `PCK@τ ≥ η` are retained.
 
+**Start View Transformation**. Please run：
+
+```bash
+python ./View_Transformation/NovelViewTransformation.py
+```
 ---
 
 ## Key Algorithms and Resources
@@ -58,6 +63,9 @@ The View Transformation module lifts a single 2D image into 3D space and renders
 | **RoMa (Robust Dense Matching)** | Geometric verification and correspondence filtering | - GitHub: [parskatt/RoMa](https://github.com/parskatt/RoMa) (reference) |
 
 ---
+## Inputs
+
+The input images are from `./data/Single-View-Data`.
 
 ## Outputs
 
