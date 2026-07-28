@@ -66,6 +66,11 @@ RGB to normal:
 python ./Modality_Transformation/RGB2normal/rgb2normal.py
 ```
 
+RGB to event:
+```bash
+python ./Modality_Transformation/RGB2normal/rgb2event.py
+```
+
 RGB to other:
 ```bash
 python ./Modality_Transformation/RGB2other/....py
