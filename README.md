@@ -76,7 +76,7 @@ RGB to other:
 python ./Modality_Transformation/RGB2other/....py
 ```
 
-Refer to <a href="https://github.com/MnYangs/AnyMatch/tree/main/data/RealDataset/Modality_Transformation/readme.md">Modality Transformation</a> for details.
+Refer to <a href="https://github.com/MnYangs/AnyMatch/tree/main/Modality_Transformation/readme.md">Modality Transformation</a> for details.
 
 ## 🌀 Data Preparation for Evaluation
 
